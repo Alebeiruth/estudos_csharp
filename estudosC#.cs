@@ -13,6 +13,15 @@ Console.Write(temperature);
 Console.Write(" celsius.");
 
 
+//EXERCICIOS
+
+int version = 11;
+string updateText = "Update to Windows";
+Console.WriteLine($"{updateText} {version}!");
+
+string projectName = "First-Project";
+Console.WriteLine($@"C:\Output\{projectName}\Data");
+
 //DESAFIO C# utilizadno strings, @, $, \n, \t
 
 string projectName = "ACME";
