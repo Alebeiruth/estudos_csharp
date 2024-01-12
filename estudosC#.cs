@@ -1,3 +1,5 @@
+//DESAFIO C# utilizadno strings, @, $, \n, \t
+
 string projectName = "ACME";
 string englishLocation = $@"c:\Exercise\{projectName}\data.txt";
 Console.WriteLine($"View English output:\n\t\t{englishLocation}\n");
