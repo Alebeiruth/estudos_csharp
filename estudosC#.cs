@@ -169,6 +169,226 @@ float jeong = (float)(jeong1 + jeong2 + jeong3 + jeong4 + jeong5) / currentAssig
 
 Console.WriteLine($"Student \tGrade\n{student1}\t\t{sophia} " + " A" + $"\n{student2}\t\t{nicolas} " + " B" + $"\n{student3}\t\t{zahirah} " + " C" + $"\n{student4}\t\t{jeong} " + " D");
 
+//SOLUÇÃO DADA PELA PLATAFORMA
+
+int sophiaSum = sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
+int nicolasSum = nicolas1 + nicolas2 + nicolas3 + nicolas4 + nicolas5;
+int zahirahSum = zahirah1 + zahirah2 + zahirah3 + zahirah4 + zahirah5;
+int jeongSum = jeong1 + jeong2 + jeong3 + jeong4 + jeong5;
+
+decimal sophiaScore = (decimal) sophiaSum / currentAssignments;
+decimal nicolasScore = (decimal) nicolasSum / currentAssignments;
+decimal zahirahScore = (decimal) zahirahSum / currentAssignments;
+decimal jeongScore = (decimal) jeongSum / currentAssignments;
+
+Console.WriteLine("Student\t\tGrade\n");
+Console.WriteLine("Sophia:\t\t" + sophiaScore + "\tA");
+Console.WriteLine("Nicolas:\t" + nicolasScore + "\tB");
+Console.WriteLine("Zahirah:\t" + zahirahScore + "\tB");
+Console.WriteLine("Jeong:\t\t" + jeongScore + "\tA");
+
+//PROJETO 02
+
+string studentName = "Sophia Johnson";
+string course1Name = "English 101";
+string course2Name = "Algebra 101";
+string course3Name = "Biology 101";
+string course4Name = "Computer Science I";
+string course5Name = "Psychology 101";
+
+int course1Credit = 3;
+int course2Credit = 3;
+int course3Credit = 4;
+int course4Credit = 4;
+int course5Credit = 3;
+
+int gradeA = 4;
+int gradeB = 3;
+
+int course1Grade = gradeA;
+int course2Grade = gradeB;
+int course3Grade = gradeB;
+int course4Grade = gradeB;
+int course5Grade = gradeA;
+
+int totalCreditHours = 0;
+totalCreditHours = course1Credit + course2Credit + course3Credit + course4Credit + course5Credit;
+
+int totaalGradePoints = 0;
+totaalGradePoints += course1Credit * course1Grade;
+totaalGradePoints += course2Credit * course2Grade;
+totaalGradePoints += course3Credit * course3Grade;
+totaalGradePoints += course4Credit * course4Grade;
+totaalGradePoints += course5Credit * course5Grade;
+
+//Console.WriteLine($"{totaalGradePoints} {totalCreditHours}");
+
+decimal gradePointAverage = (decimal)totaalGradePoints / totalCreditHours;
+
+int leadDigit = (int) gradePointAverage;
+int firstDigit = (int) (gradePointAverage * 10) % 10;
+int secondDigit = (int) (gradePointAverage * 100) % 10;
+
+Console.WriteLine($"Student: {studentName}\n");
+Console.WriteLine("Course\t\t\t\tGrade\tCredit Hours");
+Console.WriteLine($"{course1Name}\t\t\t{course1Grade}\t\t{course1Credit}");
+Console.WriteLine($"{course2Name}\t\t\t{course2Grade}\t\t{course2Credit}");
+Console.WriteLine($"{course3Name}\t\t\t{course3Grade}\t\t{course3Credit}");
+Console.WriteLine($"{course4Name}\t{course4Grade}\t\t{course4Credit}");
+Console.WriteLine($"{course5Name}\t\t{course5Grade}\t\t{course5Credit}\n");
+
+Console.WriteLine($"Final GPA:\t\t\t{leadDigit}.{firstDigit}{secondDigit}");
+
+//EXERCICIO DE BIBLIOTECAS
+
+int firstValue = 500;
+int secondValue = 600;
+int largerValue;
+largerValue = Math.Max(firstValue, secondValue);
+Console.WriteLine(largerValue);
+
+//IF, ELSE IF, ELSE, ||, &&
+/*Random dice = new Random();
+
+int roll1 = dice.Next(1, 7);
+int roll2 = dice.Next(1, 7);
+int roll3 = dice.Next(1, 7);
+
+roll1 = 6;
+roll2 = 6;
+roll3 = 6;
+
+int total = roll1 + roll2 + roll3;
+
+Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+
+if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+{
+    if ((roll1 == roll2) && (roll2 == roll3)) 
+    {
+    Console.WriteLine("You rolled triples! +6 bonus to total!");
+    total += 6;
+    }
+    else
+    {
+    Console.WriteLine("You rolled doubles! +2 bonus to total!");
+    total += 2;
+    }
+
+    Console.WriteLine($"You total including the bonus: {total}");
+}
+
+if (total >= 16){
+    Console.WriteLine("You win a new car!");
+}
+else if (total >= 10)
+{
+    Console.WriteLine("You win a new laptop!");
+}
+else if (total == 7) 
+{
+    Console.WriteLine("You win a trip for two!");
+}
+else
+{
+    Console.WriteLine("You win a kitten!");
+}*/
+
+
+/*string message = "The quick brown fox jumps over the lazy dog.";
+bool result = message.Contains("dog");
+Console.WriteLine(result);
+
+if (message.Contains("fox"))
+{
+    Console.WriteLine("What does the fox say?");
+}*/
+
+Random random = new Random();
+int daysUntilExpiration = random.Next(12);
+int discountPercentage = 0;
+
+// Your code goes here
+
+
+if (daysUntilExpiration == 0)
+{
+    Console.WriteLine("Your subscription has expired.");
+}
+else if(daysUntilExpiration == 1)
+{
+    Console.WriteLine("Your subscription expires within a day!");
+    discountPercentage = 20;
+}
+else if (daysUntilExpiration <= 5) 
+{
+    Console.WriteLine($"Your subscription expires in {discountPercentage} days.");
+    discountPercentage = 10;
+}            
+else if (daysUntilExpiration <= 10)
+{
+    Console.WriteLine("Your subscription will expire soon. Renew now!");
+}
+
+if(discountPercentage > 0)
+{
+    Console.WriteLine($"Renew now and save {discountPercentage}%.");
+}
+
+//MATRIZ
+
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+// fraudulentOrderIDs[3] = "D000";
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+string[] fraudulentOrderIDs = { "A123", "B456", "C789" };
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+fraudulentOrderIDs[0] = "F000";
+
+Console.WriteLine($"Reassign First: {fraudulentOrderIDs[0]}");
+
+Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent orders to process.");
+
+//FOREACH == FOR
+
+string[] names = { "Rowena", "Robin", "Bao" };
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum = 0;
+int bin = 0;
+
+foreach(int i in inventory)
+{
+    sum += i;
+    bin++;
+    Console.WriteLine($"Bin {bin} = {i} items (Running total: {sum})");
+}
+
+Console.WriteLine($"We have {sum} items in inventory.");
+
+string[] orderIDs = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
+
+foreach (string orderID in orderIDs)
+{
+    if (orderID.StartsWith("B"))
+    {
+        Console.WriteLine(orderID);
+    }
 
 
 
