@@ -248,7 +248,7 @@ largerValue = Math.Max(firstValue, secondValue);
 Console.WriteLine(largerValue);
 
 //IF, ELSE IF, ELSE, ||, &&
-/*Random dice = new Random();
+Random dice = new Random();
 
 int roll1 = dice.Next(1, 7);
 int roll2 = dice.Next(1, 7);
@@ -292,17 +292,17 @@ else if (total == 7)
 else
 {
     Console.WriteLine("You win a kitten!");
-}*/
+}
 
 
-/*string message = "The quick brown fox jumps over the lazy dog.";
+string message = "The quick brown fox jumps over the lazy dog.";
 bool result = message.Contains("dog");
 Console.WriteLine(result);
 
 if (message.Contains("fox"))
 {
     Console.WriteLine("What does the fox say?");
-}*/
+}
 
 Random random = new Random();
 int daysUntilExpiration = random.Next(12);
@@ -342,6 +342,7 @@ string[] fraudulentOrderIDs = new string[3];
 fraudulentOrderIDs[0] = "A123";
 fraudulentOrderIDs[1] = "B456";
 fraudulentOrderIDs[2] = "C789";
+
 // fraudulentOrderIDs[3] = "D000";
 
 Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
@@ -389,6 +390,8 @@ foreach (string orderID in orderIDs)
     {
         Console.WriteLine(orderID);
     }
+
+
 
 
 
