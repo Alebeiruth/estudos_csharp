@@ -390,10 +390,170 @@ foreach (string orderID in orderIDs)
     {
         Console.WriteLine(orderID);
     }
+//UTILIZANDO SWITCH
+int empregadoNivel = 100;
+string empregadoNome = "Jonh Smith";
+
+string titulo = "";
+
+switch (empregadoNivel)
+{
+    case 100:
+    case 200:
+        titulo = "Associado Senior";
+        break;
+    case 300:
+        titulo = "Gerente";
+        break;
+    case 400:
+        titulo = "Gerente senior";
+        break;
+    default:
+        titulo = "Associado";
+        break;
+}
+Console.WriteLine($"{empregadoNome}, {titulo}");
 
 
+// SKU = Stock Keeping Unit. 
+// SKU value format: <product #>-<2-letter color code>-<size code>
+string sku = "01-MN-L";
+
+string[] product = sku.Split('-');
+
+string type = "Sweat shirt";
+string color = "Maroon";
+string size = "Large";
 
 
+switch (type)
+{
+    case "Sweat shirt":
+        product[0] = "01";
+        break;
+    case "T-Shirt":
+        product[0] = "02";
+        break;
+    case "Sweat pants":
+        product[0] = "03";
+        break;
+    default:
+        product[0] = "Other";
+        break;
+}
 
+switch(color)
+{
+    case "BL":
+        product[1] = "Black";
+        break;
+    case "MN":
+        product[1] = "Maroon";
+        break;
+    default:
+        product[1] = "White";
+        break;
+}
 
+switch(size)
+{
+    case "S":
+        product[2] = "Small";
+        break;
+    case "M":
+        product[2] = "Medium";
+        break;
+    case "L":
+        product[2] = "Large";
+        break;
+    default:
+        product[2] = "One Size Fits All";
+        break;
+}
+Console.WriteLine($"Product: {size} {color} {type}");
 
+//int i = 0 -> inicializador
+//i < 10 -> é condição para conclusão
+//i++ -> iterador 
+
+// neste for ele itera adc +1 ao i
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine(i);
+}
+
+// neste for ele itera subtraindi -1 ao i
+for (int i = 10; i >= 0; i--)
+{
+    Console.WriteLine(i);
+}
+
+// neste for ele itera adc +3 ao i -> 0,3,6,9
+for (int i = 0; i < 10; i += 3)
+{
+    Console.WriteLine(i);
+}
+*/
+
+//utilizando break
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine(i);
+    if (i == 7) break; //qnd i for 7 ele para o loop aqui
+}
+
+//precorre o elemento da matriz
+string[] names = { "Alex", "Eddie", "David", "Michael" };
+for (int i = names.Length - 1; i >= 0; i--) //names.Length é 4 -> 3,2,1,0 -> Michael, David, Eddie, Alex
+{
+    Console.WriteLine(names[i]);
+}
+
+// aqui ele substitui o nome e segue até o tamanho max de names
+string[] names = { "Alex", "Eddie", "David", "Michael" };
+
+for (int i = 0; i < names.Length; i++)
+{
+    if (names[i] == "David")
+    {
+        names[i] = "Sammy";
+    }
+}
+
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+
+//WHILE E DO WHILE
+Random random = new Random();
+int current = 0;
+
+do
+{
+    current = random.Next(1, 11);
+    Console.WriteLine(current);
+} while (current != 7);
+
+Random random = new Random();
+int current = random.Next(1, 11);
+
+while (current >= 3) //se o numero randomico for >= 3 ele entra no bloco
+{
+    Console.WriteLine(current); // aqui ele imprime o primeiro valor
+    current = random.Next(1, 11);// atuliza o valor randomico aqui e volta pro while
+}
+Console.WriteLine($"Last number: {current}");//termina se for false <= 3 e imprime aqui qual foi o ultimo numero no current
+
+//USANDO CONTINUE
+Random random = new Random();
+int current = random.Next(1, 11);
+
+do
+{
+    current = random.Next(1, 11);//novo valor random p current
+
+    if (current >= 8) continue; // se maior ou  igual ele cai direto no While
+
+    Console.WriteLine(current);
+} while (current != 7); //enquanto não for 7 o loop continua
