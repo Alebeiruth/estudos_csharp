@@ -557,3 +557,162 @@ do
 
     Console.WriteLine(current);
 } while (current != 7); //enquanto não for 7 o loop continua
+
+
+
+//CONVERSAÇÃO DE DADOS 01
+int myInt = 3;
+Console.WriteLine($"int: {myInt}");
+
+decimal myDecimal = myInt;
+Console.WriteLine($"decimal: {myDecimal}");
+
+
+//CONVERSAÇÃO DE DADOS 02
+decimal myDecimal = 3.14m;
+Console.WriteLine($"decimal: {myDecimal}");
+
+int myInt = (int)myDecimal;
+Console.WriteLine($"int: {myInt}");
+
+
+//conversão de estreitamento -> significa que você está tentando converter um valor
+//de um tipo de dados que pode conter mais informações para um tipo de dados que
+//pode conter menos informações
+//Neste caso, pode perder informação como precisão (ou seja, o número de valores+
+//após o ponto decimal.
+
+
+decimal myDecimal = 1.23456789m;
+float myFloat = (float)myDecimal;
+
+Console.WriteLine($"Decimal: {myDecimal}");
+Console.WriteLine($"Float  : {myFloat}");
+
+
+//CONVERSAÇÃO DE DADOS 3.1 -> int p string
+int first = 5;
+int second = 7;
+string message = first.ToString() + second.ToString();
+Console.WriteLine(message);
+
+//CONVERSAÇÃO DE DADOS 3.2 -> string p int
+string first = "5";
+string second = "7";
+int sum = int.Parse(first) + int.Parse(second);
+Console.WriteLine(sum);
+
+//CONVERSAÇÃO DE DADOS 4.0 -> string para int
+string value1 = "5";
+string value2 = "7";
+int result = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+Console.WriteLine(result);
+
+//CONVERSAÇÃO DE DADOS 5.0 -> decimal para int
+int value = (int)1.5m; // casting truncates -> arrendonda pra baixo
+Console.WriteLine(value);
+
+int value2 = Convert.ToInt32(1.5m); // converting rounds up
+Console.WriteLine(value2);
+
+//Atividade 01
+string value = "102";
+int result = 0;
+if (int.TryParse(value, out result))
+{
+   Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+   Console.WriteLine("Unable to report the measurement.");
+}
+if (result > 0)
+   Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
+//Atividade 02
+int value1 = 12;
+decimal value2 = 6.2m;
+float value3 = 4.3f;
+
+// Your code here to set result1
+int result1 = Convert.ToInt32((decimal)value1 / value2); 
+// Hint: You need to round the result to nearest integer (don't just truncate)
+Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+
+// Your code here to set result2
+decimal result2 = value2 / (decimal)value3; 
+Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
+
+// Your code here to set result3
+float result3 = value3 / value1;
+Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+*/
+
+//MATRIZES -> Utilizando Array.Sort() e Array.Reverse()
+string[] pallets = { "B14", "A11", "B12", "A13" };
+
+Console.WriteLine("Sorted...");
+Array.Sort(pallets);//coloca o array em ordem alfabetica
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Console.WriteLine("Reversed...");
+Array.Reverse(pallets);// reverte a posição da saida
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+//MATRIZES -> Utilizando Array.Clear() e  Array.Resize()
+string[] pallets = { "B14", "A11", "B12", "A13" };
+Console.WriteLine("");
+
+Array.Clear(pallets, 0, 2);// aqui limpar do indice 0 a 2 (2 é exclusivo)
+Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Array.Resize(ref pallets, 6);//aqui ele redimensiona a partir dos elementos restantes
+Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
+
+pallets[4] = "C01";
+pallets[5] = "C02";
+
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Array.Resize(ref pallets, 3);//aqui ele exclui e so mantem indice 3
+Console.WriteLine($"Resizing 3 ... count: {pallets.Length}");
+
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+//MATRIZES -> Utilizando ToCharArray() -> cria uma matriz
+//Utilizando Join() e .Split() que divide a cadeia como solicitada no codigo
+
+string value = "abc123";
+char[] valueArray = value.ToCharArray();
+Array.Reverse(valueArray);
+// string result = new string(valueArray);
+string result = String.Join(",", valueArray);
+Console.WriteLine(result);
+
+string[] items = result.Split(',');
+foreach (string item in items)
+{
+    Console.WriteLine(item);
+}
+
+
+
