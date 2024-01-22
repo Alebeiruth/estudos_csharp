@@ -1370,6 +1370,26 @@ string WinOrLose(int roll, int target)
     return "You lose!";
 }
 
+//TRY, CATCH AND FINALLY
+
+try
+{
+    // Passo 1: a execução do código começa
+    try
+    {
+        // Passo 2: uma exceção ocorre aqui
+    }
+    finally
+    {
+        // Passo 4: o sistema executa o bloco de código finally associado ao comando try onde a exceção ocorreu
+    }
+
+}
+catch // Passo 3: o sistema encontra uma cláusula catch que pode tratar a exceção
+{   
+   // Passo 5: o sistema transfere o controle para a primeira linha do bloco de código catch
+}
+
 
 
 
